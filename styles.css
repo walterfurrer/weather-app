@@ -4,34 +4,26 @@
 
 .morning-theme {
     background: #f6d365;
-    background: linear-gradient(to right, #f6d365, #fda085);
+    background: linear-gradient(45deg, #f6d365, #fda085);
 }
 
-.day-theme {
-    background: #076585;
-    background: linear-gradient(to right, #076585, #fff);
+.afternoon-theme {
+    background: #000c40;
+    background: linear-gradient(45deg, #000c40, #607d8b);
 }
 
 .evening-theme {
-    background: linear-gradient(
-        45deg,
-        oklab(52.5% -0.052 -0.055),
-        oklab(71.3% -0.042 -0.036),
-        oklab(96.9% 0.002 0.035),
-        oklab(91% 0.03 0.048),
-        oklab(84.5% 0.052 0.091)
-    );
+    background: #355c7d;
+    background: linear-gradient(45deg, #355c7d, #6c5b7b, #c06c84);
 }
 
 .night-theme {
-    background: linear-gradient(
-        180deg,
-        oklch(11.4% 0.079 264),
-        oklch(31.3% 0.053 291),
-        oklch(38.6% 0.044 297),
-        oklch(49.9% 0.036 306),
-        oklch(60.4% 0.032 315)
-    );
+    background: #152331;
+    background: linear-gradient(45deg, #000, #152331);
+
+    .card {
+        background: rgba(0, 0, 0, 0.1);
+    }
 }
 
 body {
@@ -40,6 +32,8 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
+
+    color: #fff;
 }
 
 p {
@@ -55,7 +49,6 @@ p {
     min-height: 100dvh;
     min-width: 350px;
     max-width: 768px;
-    /* border: 2px blue solid; */
     inline-padding: 1rem;
 }
 
@@ -97,14 +90,15 @@ button[type="submit"] {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    height: fit-content;
+    width: fit-content;
     gap: 2rem;
-    padding: 3rem;
+    padding: 4rem;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 16px;
     background: rgba(255, 255, 255, 0.2);
-    -webkit-backdrop-filter: blur(5px);
 }
 
 .city-display,
@@ -115,7 +109,6 @@ button[type="submit"] {
 
 .humidity-display {
     font-weight: bold;
-    color: rgba(0, 0, 0, 0.75);
 }
 
 .description-display {
