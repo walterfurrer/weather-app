@@ -101,3 +101,28 @@ function displayError(message) {
   card.style.display = "flex";
   card.appendChild(errorDisplay);
 }
+
+// Time-of-day Themes
+document.addEventListener("DOMContentLoaded", dynamicTheme);
+
+function dynamicTheme() {
+  let timeOfDay;
+  let hours = new Date().getHours();
+
+  if (hours >= 5 && hours < 11) {
+    timeOfDay = "morning";
+    themeClass = "morning-theme";
+  } else if (hours >= 11 && hours < 17) {
+    timeOfDay = "afternoon";
+    themeClass = "afternoon-theme";
+  } else if (hours >= 17 && hours < 22) {
+    timeOfDay = "evening";
+    themeClass = "evening-theme";
+  } else {
+    timeOfDay = "night";
+    themeClass = "night-theme";
+  }
+  document.body.classList.remove("morning-theme", "afternoon-theme", "evening-theme", "night-theme");
+
+  document.body.classList.add(themeClass);
+}
